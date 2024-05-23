@@ -41,7 +41,7 @@ public class Main {
                     String numeroTelefonico = ali.nextLine();
                     gestore.aggiungiContatto(nome, cognome, numeroTelefonico);
                     break;
-                // in caso se non ci sono contatti, il programma non eseguirà nessuna delle seguenti opzioni
+                // in caso non ci fossero contatti, il programma non eseguirà nessuna delle seguenti opzioni
                 case 2:
                     System.out.println("\nContatti in rubrica:");
                     gestore.visualizzaContatti();
@@ -76,7 +76,7 @@ public class Main {
                 case 8:
                     System.out.print("Inserisci l'indice della chiamata recente da gestire: ");
                     int indice = ali.nextInt();
-                    ali.nextLine();  // Consuma il newline rimasto
+                    ali.nextLine();  
                     System.out.print("Inserisci l'azione (nascondi/cancella): ");
                     String azione = ali.nextLine();
                     System.out.print("Inserisci la password: ");
