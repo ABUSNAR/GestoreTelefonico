@@ -1,0 +1,68 @@
+
+import java.util.Scanner;
+public class Ordinamentro {
+
+        public static void main(String[] args) {
+            Scanner ali = new Scanner(System.in);
+            int n = 0;
+
+
+            while (n < 8 || n > 10) {
+
+                System.out.print("Inserisci la dimensione dell'array (tra 8 e 10): ");
+                n = ali.nextInt();
+            }
+
+            int[] array = new int[n];
+
+          // popoliamo l'array
+
+            for (int i = 0; i < n; i++) {
+                int num = 0;
+                while (num < 1 || num > 30) {
+                    System.out.print("Inserisci un numero intero tra 1 e 30 nella posizione " + (i + 1) + ": ");
+                   num = ali.nextInt();
+                }
+                array[i] = num;
+            }
+
+
+            int[] pari = new int[array.length];
+            int countPari = 0;
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] % 2 == 0) {
+                    pari[countPari++] = array[i];
+                }
+            }
+
+            // usiamo la strategia delle bolle (Bubble sort)
+
+            for (int i = 0; i < countPari - 1; i++) {
+                for (int j = 0; j < countPari - 1 - i; j++) {
+                    int b = j+1 ;
+                    if (pari[j] > pari[b]) {
+                        int temp = pari[j];
+                        pari[j] = pari[b];
+                        pari[b] = temp;
+                    }
+                }
+            }
+
+
+            int Indice = 0;
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] % 2 == 0) {
+                    array[i] = pari[Indice++];
+                }
+            }
+
+            // Stampa l'array corretto
+            System.out.println("Risultato ");
+            for (int i = 0; i < array.length; i++) {
+                System.out.print(array[i] + " ");
+            }
+
+        }
+    }
+
+
